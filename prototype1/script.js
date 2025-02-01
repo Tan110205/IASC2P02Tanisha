@@ -8,7 +8,7 @@ import * as THREE from "three"
 
  // Scene
  const scene = new THREE.Scene()
- scene.background = new THREE.Color('grey')
+ scene.background = new THREE.Color('beige')
 
  // Camera
  const camera = new THREE.PerspectiveCamera(
@@ -38,6 +38,9 @@ const testSphere = new THREE.Mesh(sphereGeometry, sphereMaterial)
 scene.add(testSphere)
 testSphere.position.set(0,0,-5)
 
+const testSphere2 = new THREE.Mesh(sphereGeometry, sphereMaterial)
+scene.add(testSphere2)
+testSphere2.position.set(2, 0, -5)
 
 
 /********************
@@ -53,6 +56,7 @@ const animation = () =>
         // Animate testSphere
         console.log(Math.sin(elapsedTime))
         testSphere.position.y = Math.sin(elapsedTime)
+        testSphere2.position.z = Math.cos(elapsedTime)
 
         // Renderer
         renderer.render(scene, camera)

@@ -4,10 +4,6 @@ h1 {
     text-align: center;
 }
 
-body {
-    background-color:grey;
-}
-
 .webgl {
     position: absolute;
     top: 0;
