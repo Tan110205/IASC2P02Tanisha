@@ -84,7 +84,8 @@ const ui = new dat.GUI()
 // UI Object
 const uiObject = {
     speed: 1,
-    distance: 1
+    distance: 1,
+    rotation: 1
 }
 
 // plane UI
@@ -129,6 +130,12 @@ meshFolder
 .max(10)
 .name('Distance')
 
+meshFolder
+.add(uiObject, 'rotation')
+.min(0.1)
+.max(10)
+.name('Rotation')
+
 
 /********************
 ** ANIMATION LOOP **
@@ -142,6 +149,11 @@ const animation = () =>
 
         // Animate TogleKnot
         mesh.position.y = Math.sin(elapsedTime * uiObject.speed) * uiObject.distance
+
+        //Rotation
+        mesh.rotation.x += uiObject.rotation * 0.01  // Rotate around X axis
+        mesh.rotation.y += uiObject.rotation * 0.01  // Rotate around Y axis
+        mesh.rotation.z += uiObject.rotation * 0.01  // Rotate around Z axis
 
         // Update OrbitControls
         controls.update()
