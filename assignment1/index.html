@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<head>
+    <title>Assignment 1</title>
+
+    <!--css-->
+    <link rel="stylesheet" href="style.css">
+
+    <!--three.js importmap-->
+    <script type="importmap">
+        {
+          "imports": {
+            "three": "https://ga.jspm.io/npm:three@0.173.0/build/three.module.js",
+            "OrbitControls": "https://ga.jspm.io/npm:three@0.173.0/examples/jsm/controls/OrbitControls.js",
+            "lil-gui": "https://ga.jspm.io/npm:lil-gui@0.20.0/dist/lil-gui.esm.js"
+          }
+        }
+    </script>
+
+    <!--three.js scene-->
+    <script src="script.js" type="module"></script>
+
+</head>
+<body>
+    <div class="flexbox">
+        <!-- ESSAY -->
+         <div class="essay">
+         <h2>1. Flatness</h2>
+         <p><span class="clickable" id="part-one">From inside the cave...</span></p>
+
+         <p>Inside the cave, the people can only perceive a series of shadows dancing on the wall before them. The light coming from an unseen source casts the shadows of six spheres and a half torus geometry, forming what appears to be a rainbow. The people in the cave interpret these shapes as signs or symbols of the world beyond their comprehension. As one sphere moves slightly, the shadow of a rainbow still remains across the wall. Some believe the motion signifies the rise of a great force outside, while others think it is the movement of spirits.
+            
+    <span class="clickable" id="first-change">Set initial  Position</span>. <span class="clickable" id="second-change">Position changes</span>.</p>
+
+         <p>
+            "The idea that we frequently view the world as two-dimensional, where the depth and complexity of reality are flattened into what we immediately understand, is known as Nick Sousanis's concept of Flatness." The flat shadows on the wall are the only source of information that the people inside the cave see about the outside world. They believe the world outside is as constrained and superficial or abstract as the pictures they see since these shadows have no depth or context. This interpretation might have to do with how the cave inhabitants perceive the rainbow's shadow; it's possible that they perceive it as a representation of a single, static nature rather than the vibrant, dynamic complexity of the outside world. 
+        </p>
+
+         <h2>2. Seeing Double</h2>
+         <p><span class="clickable" id="part-two">From outside the cave...</span></p>
+
+         <p>
+
+            The light source outside the cave is a bright ball that emits rays onto the torus knot and the six spheres, forming a complex pattern of rainbow-colored shadows that cover the cave wall. The shadows lengthen and the silhouette of the torus knot begins to change into the illumination of the rainbow curve. The spheres also change, unchanging the main idea of the rainbow on the wall but give an illusion as tho the clouds are moving, a more intricate form. The people of the cave are unaware of this complexity, while those outside see that the rainbow is a natural outcome of the light's interaction with the objects.
+
+            
+            <span class="clickable" id="third-change">Rotation</span>. <span class="clickable" id="fourth-change">Sphere Animation</span>.</p>
+
+         <p>
+            
+            The idea of "Seeing Double," as proposed by Sousanis, examines how two viewpoints can coexist and frequently unveil higher levels of meaning. People outside the cave perceive a distinct, dynamic world that is full of depth and action. Through the shadows, the cave inhabitants only see a flat, static representation of this reality. The individuals outside are aware of the things that are creating the rainbow shadow and the source of the light. But, oblivious to the reality, the cave's occupants perceive these transitory shadows as mystical, seeing them as a symbol of a realm beyond their understanding.
+        
+        </p>
+        </div>
+
+        <!-- SCENE -->
+        <div class="scene">  
+    <canvas class="webgl"></canvas>
+    </div>
+</div>
+</body>
