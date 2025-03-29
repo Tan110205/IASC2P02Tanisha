@@ -80,7 +80,7 @@ window.addEventListener('resize' , () => {
 
  const scene = new THREE.Scene()
 
- scene.background = new THREE.Color('grey')
+ //scene.background = new THREE.Color('grey')
 
 
 
@@ -100,7 +100,8 @@ window.addEventListener('resize' , () => {
 
  scene.add(camera)
 
- camera.position.set(0, 12, -20)
+ camera.position.set(0, 10, -20)
+ scene.add(camera)
 
 
 
@@ -110,7 +111,9 @@ window.addEventListener('resize' , () => {
 
         canvas: canvas,
 
-        antialias: true
+        antialias: true,
+
+        alpha: true
 
     })
 
