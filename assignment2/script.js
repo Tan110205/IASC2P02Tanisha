@@ -75,6 +75,7 @@ scene.add(directionalLight)
 ** MESHES **
 ************/
 
+/*
 // Cube Geometry
 const cubeGeometry = new THREE.BoxGeometry(0.5, 0.5, 0.5)
 
@@ -106,6 +107,37 @@ const drawCube = (height, color) =>
 //drawCube (1, 'blue')
 //drawCube (2, 'green')
 //drawCube (3, 'yellow')
+/*/
+
+// Torus KNot geometry 
+const torusKnotGeometry = new THREE.TorusKnotGeeometry( 10, 3, 100, 16 ); 
+
+const drawTorusKnot = (height, color) =>
+{
+// materials
+const material = new THREE.MeshStandardMaterial( { 
+    color: new THREE.Color(color)
+} )
+
+// create torus knot
+const torusKnot = new THREE.Mesh (torusKnotGeometry, material)
+
+//Position Cube
+//torusKnot.position.x = (Math.random() - 0.5) * 10
+//torusKnot.position.z = (Math.random() - 0.5) * 10
+//torusKnot.position.y = height - 10
+torusKnot.position.set(Math.random() * 10, height, Math.random() * 10);
+
+//Randomize rotation
+torusKnot.rotation.x = 0
+torusKnot.rotation.z = 0
+torusKnot.rotation.y = 0
+
+// Add cube to scene
+scene.add(torusKnot)
+
+}
+
 
 
 
@@ -118,15 +150,15 @@ const ui = new dat.GUI()
 let preset = {}
 
 const uiObj = {
-    sourceText:"The dark blue dolphin had a high jump above the horison at sunset",
+    sourceText:"Tris Prior, standing on the edge of a speeding train, feels the wind rush past her face as her heart pounds in her chest. The train barrels forward at a terrifying speed, its metal body rattling along the tracks. Below her, the ground is distant and unforgiving, and the platform she’s about to leap onto seems like a mere speck. The sky above is overcast, the clouds swirling ominously, adding to the weight of the moment. Around her, the other initiates of the Dauntless faction stand at a distance, watching with eager eyes, their faces a mix of anticipation, excitement, and judgment. As Tris steels herself for the jump, the world around her seems to go silent. Her feet shift, her body tensing as she grips the metal railing in front of her. The leap isn’t just a test of physical strength; it’s a test of courage, a defining moment that will determine her place in Dauntless. Her palms are sweaty, and her breath comes in shallow gasps. She can feel the pulse of fear in her veins, but beneath that fear is an undeniable surge of adrenaline. The eyes of the initiates are on her—expecting, waiting. Every inch of her being screams to hesitate, to back out, but Tris knows there’s no turning back. With one final, deep breath, she pushes off the train, her body hurtling through the air, a brief moment of weightlessness before gravity takes hold. The platform below grows larger with every passing second, and for that moment, time seems to slow down, her thoughts racing as she faces the unknown. The jump is a leap not only into the physical danger of the moment but also into her own courage, into her identity, and the strength she must find within herself to thrive in a world that demands nothing less than bravery.",
     saveSourceText() {
         saveSourceText()
     },
-    term1: 'dolphin',
+    term1: 'tris',
     color1: '#336EFF',
-    term2: 'horizon',
+    term2: 'her',
     color2: '#33E0FF',
-    term3: 'jump',
+    term3: 'she',
     color3: '6E33FF',
     saveTerms(){
         saveTerms()
@@ -174,7 +206,7 @@ textFolder
 //Terms and visualize folder
 const termsFolder = ui.addFolder("Search Terms")
 const visualizeFolder = ui.addFolder("Visualize")
-const cameraFolder = ui.addFolder("Camera")
+//const cameraFolder = ui.addFolder("Camera")
 
 termsFolder
     .add(uiObj, 'term1')
@@ -204,14 +236,14 @@ visualizeFolder
     .add(uiObj, 'saveTerms')
     .name("Visualize")
 
-cameraFolder
-    .add(uiObj, 'rotateCamera')
-    .name("Turnable")
+//cameraFolder
+    //.add(uiObj, 'rotateCamera')
+   // .name("Turnable")
 
 //Terms and visualize folder are hidden by default
 termsFolder.hide()
 visualizeFolder.hide()
-cameraFolder.hide()
+//cameraFolder.hide()
 
 
 
@@ -245,9 +277,8 @@ const findSearchTermInTokenizedText = (term, color) =>
 
             //call draw cube function 100 times using height value
             for(let a = 0; a < 100; a++){
-                drawCube(height, color)
+                drawTorusKnot(height, color)
             }
-
         }
     }
 }
